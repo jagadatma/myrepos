@@ -1,0 +1,2 @@
+This file will be merged from feature1 branch to hotfix, production and integration branch. 
+this is file f3. 
