@@ -1,0 +1,2 @@
+This file is created in branch hotfix.
+Hotfix branch will be merged in production and integration branch. 
