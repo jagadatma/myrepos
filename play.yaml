@@ -1,0 +1,23 @@
+---
+ - name: Play 1
+   hosts: webservers
+   gather_facts: false
+   become: yes
+   
+   tasks: 
+     - name: Get hostname
+       command: hostname
+       
+     - name: get Uptime
+       command: uptime
+
+ - name: Play 2
+   hosts: localhost
+   gather_facts: true
+   become: no
+   
+   tasks: 
+     - name: Get hostname
+       command: hostname
+     - name: get uptime
+       command: uptime

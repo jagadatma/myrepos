@@ -1,0 +1,11 @@
+---
+ - hosts: webservers
+   vars: 
+     greeting: "Hi from "
+   
+   tasks: 
+     - name : variables
+       shell: hostname 
+       register: output
+     - debug: 
+         msg: "{{greeting}} {{output.stdout}}}"

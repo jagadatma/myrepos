@@ -1,0 +1,12 @@
+---
+ - hosts: localhost
+   become: yes
+   
+   tasks: 
+     - name: Print OS Family and version
+       debug: 
+         msg: "{{ ansible_facts['os_family'] }} - version {{ ansible_facts['distribution_major_version']}} "
+     - name: Ansible condition
+       command: echo "True"
+       when: ( ansible_facts["os_family"] == "Ubuntu" and ansible_facts['distribution_major_version'] == 20) or 
+             ( ansible_facts["os_family"] == "Debian" and ansible_facts['distribution_major_version'] == 7)

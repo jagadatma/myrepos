@@ -1,0 +1,28 @@
+---
+ - hosts: webservers
+   become: yes
+   vars:
+     greeting: "Hi from "
+
+   tasks:
+     - name: Find Host name
+       shell: hostname
+       register: output
+
+     - name: Print Hostname
+       debug:
+         msg: "{{greeting}} {{ output.stdout }}"
+         
+     - name: Get Home directory listing
+       shell: ls /home
+       register: my_home
+     - name: List directory
+       debug:
+         msg: "Home list -> {{my_home.stdout_lines}}"
+
+     - name: Create files
+       shell:
+          "touch /home/{{item}}.txt"
+       loop:
+        "{{my_home.stdout_lines}}"
+

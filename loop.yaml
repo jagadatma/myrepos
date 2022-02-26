@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  
+  tasks: 
+    - name: looping
+      debug: 
+        msg: "{{item}}"
+      loop:
+        - test1value
+        - test2value

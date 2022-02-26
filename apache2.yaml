@@ -1,0 +1,19 @@
+---
+- hosts: webservers
+  become: true
+    
+  tasks: 
+      - name: Install apache
+        apt:
+          name=apache2
+          state=latest
+      - name: Module rewrite
+        apache2_module: 
+          name=rewrite
+          state=present
+        notify: 
+          - restart_apache2
+
+  handlers: 
+    - name: restart_apache2
+      service: name=apache2 state=restarted
