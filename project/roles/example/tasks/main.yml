@@ -1,0 +1,6 @@
+---
+# tasks file for example
+- name: Copy example files
+  template: 
+    src: templates/example.j2
+    dest: /home/labsuser/Desktop/ansible/project/output.txt

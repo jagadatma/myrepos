@@ -1,0 +1,19 @@
+---
+
+{% for col in colors %}
+Color number {{loop.index}} is {{ col.name}}
+{% set cnt = 0 %}
+
+{% for person in people %}
+{% if person.fav_color == col.name %}
+{% set cnt = cnt + 1 %}
+{% endif %}
+{% endfor %}
+
+Currently {{ cnt }} number of people call {{ col.name }} their favorite color. 
+And the following are the things that are {{col.name}}
+
+{% for t in col.things %} 
+ - {{ t }}
+{% endfor %}
+{% endfor %}

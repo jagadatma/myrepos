@@ -1,0 +1,16 @@
+---
+people: 
+  - name: Mike
+    fav_color: Blue
+  - name: Bob
+    fav_color: Red
+
+colors:
+  - name: Blue
+    things: 
+      - Sky
+      - Ocean
+  - name: Red
+    things:
+      - Apple
+      - Sun

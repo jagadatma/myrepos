@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  become: true
+
+  tasks: 
+    - name: Using Ansible facts 
+      when: ansible_distribution == "Debian"
+      apt:
+        name=apache2
+        state=latest
+    - name: printing message
+      debug: 
+        msg: "{{ ansible_facts['os_family'] }}"

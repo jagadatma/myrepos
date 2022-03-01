@@ -1,0 +1,14 @@
+---
+- name: Demo of variables in Jinja2 loop
+  hosts: localhost
+  gather_facts: false
+
+  vars_files: 
+    - var.yaml
+
+  tasks:
+    - name: Using Jinja2 template
+      template:
+         src=varloop.j2
+         dest=output.txt
+

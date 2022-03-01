@@ -2,8 +2,8 @@
 - hosts: webservers
   become: true
 
-  vars: 
-    webserver_message: "This is from Apache2 server"
+  # vars: 
+  #  webserver_message: "This is from Apache2 server"
 
   tasks:  
     - name: start apache2

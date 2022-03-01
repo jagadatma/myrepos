@@ -1,0 +1,22 @@
+---
+
+Color number 1 is Blue
+
+
+Currently 0 number of people call Blue their favorite color. 
+And the following are the things that are Blue
+
+ 
+ - Sky
+ 
+ - Ocean
+Color number 2 is Red
+
+
+Currently 0 number of people call Red their favorite color. 
+And the following are the things that are Red
+
+ 
+ - Apple
+ 
+ - Sun

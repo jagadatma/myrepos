@@ -1,2 +1,2 @@
 A message from {{ inventory_hostname }} 
-{{ webserver_message }}
+{{ webserver_message | default ("Hello - Default message!!!")}}

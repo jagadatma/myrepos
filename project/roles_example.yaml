@@ -1,0 +1,15 @@
+---
+- name: demo of ansible roles
+  hosts: localhost
+  become: true
+  
+  #vars: 
+  #  system_manager: xyz@jagad.com
+
+  roles:
+    - role: example
+
+  tasks: 
+    - name : Printing message
+      debug: 
+        msg: "Value is {{system_manager}}"
