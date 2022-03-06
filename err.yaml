@@ -1,0 +1,36 @@
+--- 
+ - name: error handling
+   hosts: localhost
+   gather_facts: no
+
+   tasks: 
+    - name: Only One task of Block and Rescue
+      block: 
+        - name: Failure Task
+          command: /bin/false
+          
+        
+        - name: This is a test
+          debug:
+            msg: "Will it get executed?"
+            
+      
+      rescue:
+        - name: This is where error is handled - The rescue block
+          debug:
+            msg: "rescue task!!"
+            
+    - name: Another Task of Block and rescue
+      block: 
+        - name: Success Task
+          command: echo "T"
+          register: xyz
+      rescue:
+        - name: This is where error is handled - The rescue block
+          debug:
+            msg: "rescue task!!"
+
+      always:
+        - name: This task is always
+          debug: 
+            msg: "This is always executed regardless of failure - {{xyz.stdout}}"

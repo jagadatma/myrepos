@@ -1,0 +1,35 @@
+---
+ - name: Working with tags
+   hosts: localhost
+   become: yes
+   gather_facts: no
+
+   tasks: 
+     - name: TASK A
+       debug:
+         msg: "Executed task A"
+       tags:
+        - taski
+        - groupdev
+
+     - name: TASK B
+       debug:
+         msg: "Excuted task B"
+       tags:
+        - taskii
+        - grouptest
+        - custom
+
+     - name: TASK C
+       debug:
+         msg: "Executed task C"
+       tags:
+        - taskiii
+        - groupdev
+
+     - name: Task D
+       debug:
+         msg: "Executed task D"
+
+
+
